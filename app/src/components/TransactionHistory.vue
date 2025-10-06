@@ -2,7 +2,7 @@
   <div class="transaction-history card">
     <div class="mb-6">
       <h2 class="text-2xl font-bold mb-2">Current Balance</h2>
-      <p class="text-4xl font-bold text-green-600">{{ walletStore.formattedBalance }}</p>
+      <p class="text-4xl font-bold text-violet-600">{{ walletStore.formattedBalance }}</p>
     </div>
 
     <div>

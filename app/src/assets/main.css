@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+:root {
+  --pimono-start: #4F46E5;
+  --pimono-end: #A855F7;
+}
+
 @layer base {
   button, [role="button"], a { @apply cursor-pointer; }
   a { @apply text-blue-600 hover:text-blue-700 underline-offset-2 hover:underline; }
@@ -160,4 +165,32 @@
   font-weight: theme(fontWeight.medium);
   background-color: theme(colors.red.100);
   color: theme(colors.red.700);
+}
+
+@utility bg-pimono-gradient {
+  /* Applies the full diagonal gradient as a background */
+  background: linear-gradient(135deg, var(--pimono-start) 0%, var(--pimono-end) 100%);
+}
+
+@utility badge-pimono {
+  display: inline-flex;
+  align-items: center;
+  padding-left: theme(spacing.2);
+  padding-right: theme(spacing.2);
+  padding-top: theme(spacing[0.5]);
+  padding-bottom: theme(spacing[0.5]);
+  border-radius: theme(borderRadius.full);
+  font-size: theme(fontSize.xs);
+  font-weight: theme(fontWeight.medium);
+  background: linear-gradient(135deg, var(--pimono-start) 0%, var(--pimono-end) 100%);
+  color: theme(colors.white);
+}
+
+@utility text-pimono-gradient {
+  /* Applies the gradient to text */
+  background: linear-gradient(135deg, var(--pimono-start) 0%, var(--pimono-end) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }

@@ -2,14 +2,13 @@
   <header class="bg-white border-b border-gray-200">
     <div class="container mx-auto px-4 py-3 flex items-center justify-between">
       <div class="flex items-center gap-2">
-        <div class="h-8 w-8 rounded-lg bg-blue-600" />
-        <h1 class="text-lg sm:text-xl font-bold text-gray-800">Mini Wallet</h1>
+        <img src="/logo.png" alt="Logo" class="h-12 w-auto" />
       </div>
 
       <div class="flex items-center gap-3" v-if="auth.token">
         <div v-if="auth.user" class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
           <span class="text-sm text-gray-600">Hi, {{ auth.user.name }}</span>
-          <span class="text-xs sm:text-sm font-mono font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded">
+          <span class="text-xs sm:text-sm font-mono font-semibold badge-pimono px-2 py-1 rounded">
             ID: {{ formatUserId(auth.user.id) }}
           </span>
         </div>

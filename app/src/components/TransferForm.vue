@@ -31,7 +31,7 @@
         <p class="text-sm text-green-600">{{ success }}</p>
       </div>
 
-      <button type="submit" :disabled="loading || !form.receiver_id || !form.amount" class="btn-primary w-full">
+      <button type="submit" :disabled="loading || !form.receiver_id || !form.amount" class="btn-primary bg-pimono-gradient w-full">
         {{ loading ? 'Processing...' : 'Send' }}
       </button>
     </form>

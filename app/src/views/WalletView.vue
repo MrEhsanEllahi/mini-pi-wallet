@@ -47,8 +47,6 @@ const initializeRealtime = async () => {
     if (window.Echo) {
       echo = window.Echo
 
-      console.log(echo);
-
       // Subscribe to private channel for this user
       echo
         .private(`user.${user.id}`)

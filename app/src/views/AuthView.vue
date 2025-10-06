@@ -21,7 +21,7 @@
 
         <p v-if="auth.error" class="text-sm text-red-600">{{ auth.error }}</p>
 
-        <button :disabled="auth.loading" class="btn-primary w-full">
+        <button :disabled="auth.loading" class="btn-primary bg-pimono-gradient w-full">
           {{ auth.loading ? 'Please wait...' : (mode === 'login' ? 'Login' : 'Register') }}
         </button>
       </form>
