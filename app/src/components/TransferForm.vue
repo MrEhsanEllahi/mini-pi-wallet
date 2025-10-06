@@ -24,11 +24,11 @@
       </div>
 
       <div v-if="error" class="mb-4 p-3 bg-red-50 border border-red-200 rounded-md">
-        <p class="text-sm text-red-600">{{ error }}</p>
+        <p class="text-sm text-red-700">{{ error }}</p>
       </div>
 
       <div v-if="success" class="mb-4 p-3 bg-green-50 border border-green-200 rounded-md">
-        <p class="text-sm text-green-600">{{ success }}</p>
+        <p class="text-sm text-green-700">{{ success }}</p>
       </div>
 
       <button type="submit" :disabled="loading || !form.receiver_id || !form.amount" class="btn-primary bg-pimono-gradient w-full">

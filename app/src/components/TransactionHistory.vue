@@ -2,7 +2,7 @@
   <div class="transaction-history card">
     <div class="mb-6">
       <h2 class="text-2xl font-bold mb-2">Current Balance</h2>
-      <p class="text-4xl font-bold text-violet-600">{{ walletStore.formattedBalance }}</p>
+      <p class="text-4xl font-bold text-pimono-gradient">{{ walletStore.formattedBalance }}</p>
     </div>
 
     <div>
@@ -13,7 +13,7 @@
       </div>
 
       <div v-else-if="walletStore.error" class="p-4 bg-red-50 border border-red-200 rounded-md">
-        <p class="text-sm text-red-600">{{ walletStore.error }}</p>
+        <p class="text-sm text-red-700">{{ walletStore.error }}</p>
       </div>
 
       <div v-else-if="walletStore.transactions.length === 0" class="text-center py-8">
@@ -64,8 +64,8 @@
               <p
                 :class="
                   transaction.sender_id === currentUserId
-                    ? 'text-red-600 font-bold text-lg'
-                    : 'text-green-600 font-bold text-lg'
+                    ? 'text-red-700 font-bold text-lg'
+                    : 'text-green-700 font-bold text-lg'
                 "
               >
                 {{ transaction.sender_id === currentUserId ? '-' : '+' }}
