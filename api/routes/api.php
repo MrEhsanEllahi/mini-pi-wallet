@@ -4,6 +4,7 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Broadcast;
 
 // Public auth routes
 Route::post('/auth/register', [AuthController::class, 'register']);
@@ -19,3 +20,8 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::post('/auth/logout', [AuthController::class, 'logout']);
 });
+
+
+Broadcast::routes([
+    'middleware' => ['auth:sanctum'], // or your API guard (e.g., 'auth:api')
+]);

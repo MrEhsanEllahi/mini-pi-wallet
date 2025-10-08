@@ -2,6 +2,7 @@
 import { onMounted } from 'vue'
 import { RouterView } from 'vue-router'
 import AppHeader from './components/AppHeader.vue'
+import ToastContainer from './components/ToastContainer.vue'
 import { useAuthStore } from './stores/auth'
 
 const auth = useAuthStore()
@@ -17,6 +18,7 @@ onMounted(() => {
     <main class="py-6">
       <RouterView />
     </main>
+    <ToastContainer />
   </div>
   
 </template>

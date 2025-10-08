@@ -129,7 +129,14 @@ class TransactionController extends Controller
                 $transaction->load(['sender:id,name,email', 'receiver:id,name,email']);
 
                 // Broadcast event to both sender and receiver
-                broadcast(new TransactionCreated($transaction))->toOthers();
+                \Log::info('Broadcasting transaction', [
+                    'transaction_id' => $transaction->id,
+                    'sender_id' => $transaction->sender_id,
+                    'receiver_id' => $transaction->receiver_id,
+                    'channels' => ['user.' . $transaction->sender_id, 'user.' . $transaction->receiver_id]
+                ]);
+
+                broadcast(new TransactionCreated($transaction));
 
                 return $transaction;
             });

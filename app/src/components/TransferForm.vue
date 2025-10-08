@@ -83,6 +83,11 @@ const handleSubmit = async () => {
   success.value = null
 
   try {
+    // Fetch latest balance and transactions first to ensure we have current state
+    const { data: currentData } = await api.get('/transactions')
+    walletStore.setBalance(currentData.balance ?? 0)
+    const transactionData = currentData.transactions.data || currentData.transactions
+    walletStore.setTransactions(transactionData)
     // Parse receiver_id to handle both formatted (000001) and plain (1) input
     const receiverId = parseInt(form.value.receiver_id, 10)
 

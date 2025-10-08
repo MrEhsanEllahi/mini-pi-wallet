@@ -14,6 +14,5 @@ use Illuminate\Support\Facades\Broadcast;
 */
 
 Broadcast::channel('user.{id}', function ($user, $id) {
-    \Log::info('Broadcast auth check', ['user' => $user?->id, 'channel' => $id]);
     return (int) $user->id === (int) $id;
 });

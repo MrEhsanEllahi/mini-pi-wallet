@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { useApi } from '../composables/useApi'
+import { updatePusherToken } from '../pusher'
 
 export const useAuthStore = defineStore('auth', () => {
   const api = useApi()
@@ -12,6 +13,7 @@ export const useAuthStore = defineStore('auth', () => {
 
   function setToken(newToken) {
     token.value = newToken
+    updatePusherToken(newToken)
     if (newToken) {
       localStorage.setItem('token', newToken)
     } else {
@@ -26,6 +28,7 @@ export const useAuthStore = defineStore('auth', () => {
       user.value = data
       return data
     } catch (e) {
+      console.error('Failed to fetch user:', e)
       // token invalid
       setToken(null)
       user.value = null
@@ -78,4 +81,3 @@ export const useAuthStore = defineStore('auth', () => {
 
   return { token, user, loading, error, setToken, fetchUser, register, login, logout }
 })
-
